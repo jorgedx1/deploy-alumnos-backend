@@ -35,7 +35,7 @@ export async function getUserSummaryByExpediente(
         ? await planRepo.findOne({ where: { id: planId } })
         : null;
 
-    const totalCreditosPlan = plan?.total_creditos ?? 0;
+    const totalCreditosPlan = plan?.total_creditos ?? 999;
     const creditosServicio = plan?.creditos_servicio ?? 0;
     const creditosPracticas = plan?.creditos_practicas ?? 0;
 
