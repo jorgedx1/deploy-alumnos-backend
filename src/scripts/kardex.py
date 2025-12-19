@@ -435,8 +435,8 @@ def extract_summary(raw_text: str) -> dict:
         # 6-9: MATERIAS (APR, REP, NMR, INS)
         
         resumen["creditos"] = {
-            "APR": int(data_line_pattern.group(3)),
-            "REP": int(data_line_pattern.group(4)),
+            "APR": int(data_line_pattern.group(4)),
+            "REP": int(data_line_pattern.group(3)),
             "INS": int(data_line_pattern.group(5)),
         }
         

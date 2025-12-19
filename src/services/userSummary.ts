@@ -30,14 +30,10 @@ export async function getUserSummaryByExpediente(
     // 2) Plan de estudios
     const planId =
         (alumno as any).plan_estudio_id ?? (alumno as any).planEstudioId ?? null;
-        console.log("expediente:", expediente);
-        console.log("planId:", planId);
 
     const plan = planId
         ? await planRepo.findOne({ where: { id: planId } })
         : null;
-        console.log("plan encontrado:", plan?.id);
-        console.log("plan.total_creditos:", plan?.total_creditos);
 
     const totalCreditosPlan = plan?.total_creditos ?? 999;
     const creditosServicio = plan?.creditos_servicio ?? 0;
